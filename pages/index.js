@@ -1,3 +1,7 @@
 import React from 'react';
+import { withApollo } from '../apollo/withApollo';
+import SummariesList from '../components/SummariesList';
 
-export default () => <div>Hello!</div>;
+const IndexPage = () => <SummariesList />;
+
+export default withApollo(IndexPage);
