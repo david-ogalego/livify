@@ -1,34 +1,6 @@
-import { ApolloServer, gql } from 'apollo-server-micro';
-import fetch from 'node-fetch';
-
-const typeDefs = gql`
-    type video {
-        title: String
-        embed: String
-    }
-
-    type summary {
-        title: String
-        url: String
-        thumbnail: String
-        date: String
-        videos: [video]
-    }
-
-    type Query {
-        summaries: [summary]
-    }
-`;
-
-const resolvers = {
-    Query: {
-        summaries: () => {
-            return fetch('https://www.scorebat.com/video-api/v1/').then(res =>
-                res.json()
-            );
-        }
-    }
-};
+import { ApolloServer } from 'apollo-server-micro';
+import typeDefs from '../../apollo/typeDefs';
+import resolvers from '../../apollo/resolvers';
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
