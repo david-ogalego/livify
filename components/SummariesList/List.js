@@ -52,6 +52,15 @@ export default ({ summaries }) => {
                         padding-right: 32px;
                     }
                 }
+
+                @media only screen and (max-width: 600px) {
+                    .list-item {
+                        max-width: 100%;
+                        flex-basis: 100%;
+                        padding: 5px;
+                        margin: 10px;
+                    }
+                }
             `}</style>
         </React.Fragment>
     );
