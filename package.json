@@ -8,7 +8,7 @@
         "build": "next build",
         "export": "next export",
         "deploy": "npm run build && npm run export",
-        "start": "next start -p $PORT",
+        "start": "GRAPHQL_ENDPOINT=https://livify.herokuapp.com/api/graphql next start -p $PORT",
         "heroku-postbuild": "npm run build"
     },
     "repository": {
@@ -28,6 +28,7 @@
         "apollo-client": "^2.6.4",
         "apollo-link-http": "^1.5.16",
         "apollo-server-micro": "^2.9.4",
+        "dotenv": "^8.1.0",
         "graphql": "^14.5.8",
         "isomorphic-unfetch": "^3.0.0",
         "next": "^9.0.7",
