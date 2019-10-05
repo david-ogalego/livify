@@ -6,11 +6,13 @@ import List from './List';
 const GET_SUMMARIES = gql`
     query getSummaries {
         summaries {
+            id
             title
             url
             thumbnail
             date
             videos {
+                id
                 title
                 embed
             }
