@@ -9,10 +9,20 @@ export default ({ title, url, videos }) => (
             <VideosList videos={videos} />
         </main>
         <style jsx>{`
-            .container {
-                max-width: 1280px;
-                padding-left: 32px;
-                padding-right: 32px;
+            @media (min-width: 1280px) {
+                .container {
+                    max-width: 1280px;
+                    padding-left: 32px;
+                    padding-right: 32px;
+                }
+            }
+
+            h1 {
+                padding-left: 15px;
+            }
+
+            a {
+                margin-left: 15px;
             }
         `}</style>
     </>

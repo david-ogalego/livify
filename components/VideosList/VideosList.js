@@ -5,8 +5,8 @@ export default ({ videos }) =>
     videos && videos.length ? (
         <>
             <ul className="list">
-                {videos.map(({ title, embed }) => (
-                    <li className="list-item">
+                {videos.map(({ id, title, embed }) => (
+                    <li key={id} className="list-item">
                         <Video title={title} embed={embed} />
                     </li>
                 ))}
@@ -19,9 +19,18 @@ export default ({ videos }) =>
                 }
                 .list-item {
                     flex-grow: 0;
-                    max-width: 50%;
-                    flex-basis: 50%;
+                    flex-basis: 45%;
                     padding: 5px;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+                @media only screen and (max-width: 815px) {
+                    .list-item {
+                        max-width: 100%;
+                        flex-basis: 100%;
+                        padding: 5px;
+                        margin: 10px;
+                    }
                 }
             `}</style>
         </>
