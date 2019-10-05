@@ -18,6 +18,7 @@ const typeDefs = gql`
 
     type Query {
         summaries: [summary]
+        summary(id: String!): summary
     }
 `;
 

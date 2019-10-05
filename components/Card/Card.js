@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from './Image';
 
-export default ({ summary }) => (
+export default ({ summary, onClick }) => (
     <React.Fragment>
         <div className="cardContainer">
-            <button className="cardArea">
+            <button className="cardArea" onClick={onClick}>
                 <Image src={summary.thumbnail} title={summary.title} />
                 <div className="cardContent">
                     <p>{summary.title}</p>

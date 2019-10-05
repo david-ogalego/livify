@@ -1,5 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import Card from '../../components/Card';
+import Router from 'next/router';
 
 export default ({ summaries }) => {
     return (
@@ -8,7 +10,14 @@ export default ({ summaries }) => {
                 <ul className="list">
                     {summaries.map((summary, index) => (
                         <li className="list-item" key={index}>
-                            <Card summary={summary} />
+                            {/* <Link href={`/detail?id=${index}`}> */}
+                            <Card
+                                summary={summary}
+                                onClick={() =>
+                                    Router.push(`/detail?id=${index}`)
+                                }
+                            />
+                            {/* </Link> */}
                         </li>
                     ))}
                 </ul>
