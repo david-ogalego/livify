@@ -38,8 +38,6 @@ export default ({ summaries }) => {
                     display: flex;
                     flex-wrap: wrap;
                     box-sizing: border-box;
-                    list-style-type: none;
-                    padding: 0;
                 }
 
                 .list-item {

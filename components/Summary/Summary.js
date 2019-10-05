@@ -27,9 +27,10 @@ export default ({ id }) => {
     if (loading) return <p>Loading ...</p>;
     if (error) return 'Error!';
     if (data.summary) {
-        const { title, url, thumbnail, videos } = data.summary;
+        const { id, title, url, thumbnail, videos } = data.summary;
         return (
             <SummaryDetail
+                key={id}
                 title={title}
                 url={url}
                 image={thumbnail}
