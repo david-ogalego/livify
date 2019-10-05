@@ -8,7 +8,6 @@ const resolvers = {
             return summaryRepository.fetchSummaries();
         },
         summary: (_, { id }) => {
-            console.log('Getting', id);
             return summaryRepository.fetchSummary(id);
         }
     }
