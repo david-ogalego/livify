@@ -21,14 +21,20 @@ const GET_SUMMARY = gql`
 `;
 
 export default ({ id }) => {
-    console.log('Summary', id);
     const { loading, error, data } = useQuery(GET_SUMMARY, {
         variables: { id: id }
     });
     if (loading) return <p>Loading ...</p>;
     if (error) return 'Error!';
     if (data.summary) {
-        const { title, url, thumbnail } = data.summary;
-        return <SummaryDetail title={title} url={url} image={thumbnail} />;
+        const { title, url, thumbnail, videos } = data.summary;
+        return (
+            <SummaryDetail
+                title={title}
+                url={url}
+                image={thumbnail}
+                videos={videos}
+            />
+        );
     }
 };
