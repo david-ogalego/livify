@@ -6,11 +6,10 @@ import { withApollo } from '../apollo/withApollo';
 const Detail = () => {
     const router = useRouter();
     const { id } = router.query;
-    console.log('Detail', id);
 
     return (
         <>
-            <Header />
+            <Header showPrevious />
             <Summary id={id} />
         </>
     );
