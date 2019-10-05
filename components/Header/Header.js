@@ -28,6 +28,7 @@ export default () => (
                 display: flex;
                 position: relative;
                 align-items: center;
+                justify-content: center;
             }
 
             h6 {
