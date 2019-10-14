@@ -34,6 +34,7 @@ export default class MyApp extends App {
                         name="description"
                         content="In Livify you can find the latest highlights of your favorite soccer team"
                     />
+                    <meta name="robots" content="index, nofollow" />
                     <link rel="canonical" href="https://livify.es/" />
                     <link
                         rel="stylesheet"
