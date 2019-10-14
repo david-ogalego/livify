@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from './Image';
 
-export default ({ summary, onClick }) => (
+export default ({ summary }) => (
     <React.Fragment>
         <div className="cardContainer">
-            <button className="cardArea" onClick={onClick}>
+            <a className="cardArea" href={`/detail?id=${summary.id}`}>
                 <Image src={summary.thumbnail} title={summary.title} />
                 <div className="cardContent">
                     <p>{summary.title}</p>
                 </div>
-            </button>
+            </a>
         </div>
         <style jsx>{`
             .cardContainer {
