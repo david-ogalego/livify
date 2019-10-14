@@ -11,13 +11,20 @@ export default ({ showPrevious }) => (
                     </button>
                 )}
                 <div className="container-title">
-                    <h6>Livify</h6>
+                    <h6>
+                        <a href="/">Livify</a>
+                    </h6>
                 </div>
             </div>
         </header>
         <style jsx>{`
             header {
-                background-color: #32a6e4;
+                background: linear-gradient(
+                    to bottom,
+                    rgb(32, 29, 121) 0%,
+                    rgb(60, 56, 171) 80%,
+                    rgb(81, 78, 173) 100%
+                );
                 top: 0;
                 left: auto;
                 right: 0;
@@ -68,6 +75,11 @@ export default ({ showPrevious }) => (
                 line-height: 1.6;
                 letter-spacing: 0.0075em;
                 margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
             }
         `}</style>
     </React.Fragment>
