@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { withApollo } from '../apollo/withApollo';
 import SummariesList from '../components/SummariesList';
 import Header from '../components/Header/Header';
 import { PageView } from '../utils/analytics/pageView';
 
-class IndexPage extends Component {
-    componentDidMount() {
+const IndexPage = () => {
+    useEffect(() => {
         PageView();
-    }
-    render() {
-        return (
-            <>
-                <Header />
-                <SummariesList />
-            </>
-        );
-    }
-}
+    });
+    return (
+        <>
+            <Header />
+            <SummariesList />
+        </>
+    );
+};
 
 export default withApollo(IndexPage);
