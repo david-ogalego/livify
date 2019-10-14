@@ -34,8 +34,9 @@ export default ({ showPrevious }) => (
                 background-color: transparent;
                 width: 60px;
                 height: 32px;
-                margin-left: 35px;
-                margin-top: 15px;
+                position: absolute;
+                top: 15px;
+                left: 35px;
             }
 
             .back-arrow {
@@ -56,13 +57,8 @@ export default ({ showPrevious }) => (
             }
 
             .container-title {
-                width: 77%;
-                margin-left: 105px;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-                position: absolute;
-                top: 15px;
+                margin: 0 auto;
+                padding-top: 15px;
             }
 
             h6 {

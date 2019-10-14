@@ -23,8 +23,8 @@ export default ({ summaries }) => {
                 }
 
                 .list {
-                    width: calc(100% + 16px);
-                    margin: -8px;
+                    width: 100%;
+                    margin: 0 auto;
                     justify-content: center;
                     display: flex;
                     flex-wrap: wrap;
