@@ -1,6 +1,7 @@
 import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
+import initGA from '../utils/analytics/initGA';
 
 export default class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -11,6 +12,10 @@ export default class MyApp extends App {
         }
 
         return { pageProps };
+    }
+
+    componentDidMount() {
+        initGA();
     }
 
     render() {
