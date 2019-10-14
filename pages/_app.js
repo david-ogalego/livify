@@ -30,6 +30,11 @@ export default class MyApp extends App {
                         name="viewport"
                         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
                     />
+                    <meta
+                        name="description"
+                        content="In Livify you can find the latest highlights of your favorite soccer team"
+                    />
+                    <link rel="canonical" href="https://livify.es/" />
                     <link
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
