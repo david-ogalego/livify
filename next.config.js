@@ -7,7 +7,7 @@ module.exports = {
     },
     env: {
         GRAPHQL_ENDPOINT: prod
-            ? 'https://livify.davidgomezrequeijo.now.sh/api/graphql'
+            ? 'https://livify.es/api/graphql'
             : 'http://localhost:3000/api/graphql'
     }
 };
