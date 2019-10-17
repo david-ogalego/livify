@@ -34,7 +34,7 @@ export default class MyApp extends App {
                         name="description"
                         content="In Livify you can find the latest highlights of your favorite soccer team"
                     />
-                    <meta name="robots" content="index, nofollow" />
+//                     <meta name="robots" content="index, nofollow" />
                     <meta
                         name="google-site-verification"
                         content="JiorsfOK6HgBhWTOgizzIGNo4mx4I7-ybiOJsorG5YQ"
