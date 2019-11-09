@@ -2,16 +2,16 @@ import React from 'react';
 import Image from './Image';
 
 export default ({ summary }) => (
-    <React.Fragment>
-        <div className="cardContainer">
-            <a className="cardArea" href={`/detail?id=${summary.id}`}>
-                <Image src={summary.thumbnail} title={summary.title} />
-                <div className="cardContent">
-                    <p>{summary.title}</p>
-                </div>
-            </a>
-        </div>
-        <style jsx>{`
+	<React.Fragment>
+		<div className="cardContainer">
+			<a className="cardArea" href={`/detail?id=${summary.id}`} rel="nofollow">
+				<Image src={summary.thumbnail} title={summary.title} />
+				<div className="cardContent">
+					<p>{summary.title}</p>
+				</div>
+			</a>
+		</div>
+		<style jsx>{`
             .cardContainer {
                 border-radius: 4px;
                 box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -60,5 +60,5 @@ export default ({ summary }) => (
                 margin: 0;
             }
         `}</style>
-    </React.Fragment>
+	</React.Fragment>
 );
