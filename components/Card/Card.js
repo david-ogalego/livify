@@ -47,7 +47,8 @@ export default ({ summary }) => (
 
             .cardContent {
                 padding: 16px;
-                padding-bottom: 24px;
+				padding-bottom: 24px;
+				background-color: #c5c5c5;
             }
 
             p {
@@ -57,7 +58,8 @@ export default ({ summary }) => (
                 line-height: 1.43;
                 letter-spacing: 0.01071em;
                 color: rgba(0, 0, 0, 0.54);
-                margin: 0;
+				margin: 0;
+				color: #3a3a3a;
             }
         `}</style>
 	</React.Fragment>

@@ -4,48 +4,48 @@ import React from 'react';
 import initGA from '../utils/analytics/initGA';
 
 export default class MyApp extends App {
-    static async getInitialProps({ Component, ctx }) {
-        let pageProps = {};
+	static async getInitialProps({ Component, ctx }) {
+		let pageProps = {};
 
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx);
-        }
+		if (Component.getInitialProps) {
+			pageProps = await Component.getInitialProps(ctx);
+		}
 
-        return { pageProps };
-    }
+		return { pageProps };
+	}
 
-    componentDidMount() {
-        initGA();
-    }
+	componentDidMount() {
+		initGA();
+	}
 
-    render() {
-        const { Component, pageProps } = this.props;
+	render() {
+		const { Component, pageProps } = this.props;
 
-        return (
-            <>
-                <Head>
-                    <title>Livify - Your soccer highlights</title>
-                    <meta charSet="utf-8" />
-                    <meta
-                        name="viewport"
-                        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-                    />
-                    <meta
-                        name="description"
-                        content="In Livify you can find the latest highlights of your favorite soccer team"
-                    />
-                    <meta
-                        name="google-site-verification"
-                        content="JiorsfOK6HgBhWTOgizzIGNo4mx4I7-ybiOJsorG5YQ"
-                    />
-                    <link rel="canonical" href="https://livify.es/" />
-                    <link
-                        rel="stylesheet"
-                        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-                    />
-                </Head>
-                <Component {...pageProps} />
-                <style global jsx>{`
+		return (
+			<>
+				<Head>
+					<title>Livify - Your soccer highlights</title>
+					<meta charSet="utf-8" />
+					<meta
+						name="viewport"
+						content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+					/>
+					<meta
+						name="description"
+						content="In Livify you can find the latest highlights of your favorite soccer team"
+					/>
+					<meta
+						name="google-site-verification"
+						content="JiorsfOK6HgBhWTOgizzIGNo4mx4I7-ybiOJsorG5YQ"
+					/>
+					<link rel="canonical" href="https://livify.es/" />
+					<link
+						rel="stylesheet"
+						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+					/>
+				</Head>
+				<Component {...pageProps} />
+				<style global jsx>{`
                     body {
                         color: rgba(0, 0, 0, 0.87);
                         margin: 0;
@@ -54,7 +54,7 @@ export default class MyApp extends App {
                         font-weight: 400;
                         line-height: 1.43;
                         letter-spacing: 0.01071em;
-                        background-color: #fafafa;
+                        background-color: #a7a7a7;
                     }
                     ul {
                         list-style-type: none;
@@ -77,7 +77,7 @@ export default class MyApp extends App {
                         outline: none;
                     }
                 `}</style>
-            </>
-        );
-    }
+			</>
+		);
+	}
 }

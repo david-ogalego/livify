@@ -2,29 +2,29 @@ import React from 'react';
 import Router from 'next/router';
 
 export default ({ showPrevious }) => (
-    <React.Fragment>
-        <header>
-            <div className="container">
-                {showPrevious && (
-                    <button onClick={() => Router.back()} className="back">
-                        <div className="back-arrow"></div>
-                    </button>
-                )}
-                <div className="container-title">
-                    <h6>
-                        <a href="/">Livify</a>
-                    </h6>
-                </div>
-            </div>
-        </header>
-        <style jsx>{`
+	<React.Fragment>
+		<header>
+			<div className="container">
+				{showPrevious && (
+					<button onClick={() => Router.back()} className="back">
+						<div className="back-arrow"></div>
+					</button>
+				)}
+				<div className="container-title">
+					<h6>
+						<a href="/">Livify</a>
+					</h6>
+				</div>
+			</div>
+		</header>
+		<style jsx>{`
             header {
                 background: linear-gradient(
-                    to bottom,
-                    rgb(32, 29, 121) 0%,
-                    rgb(60, 56, 171) 80%,
-                    rgb(81, 78, 173) 100%
-                );
+					to bottom,
+					rgb(0, 0, 0) 0%,
+					rgb(100, 99, 144) 80%,
+					rgb(119, 118, 150) 100%
+				);
                 top: 0;
                 left: auto;
                 right: 0;
@@ -82,5 +82,5 @@ export default ({ showPrevious }) => (
                 color: white;
             }
         `}</style>
-    </React.Fragment>
+	</React.Fragment>
 );
