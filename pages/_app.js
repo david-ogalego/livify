@@ -24,7 +24,7 @@ export default class MyApp extends App {
 		return (
 			<>
 				<Head>
-					<title>Livify - Your soccer highlights</title>
+					<title>Livify - Your football video highlights</title>
 					<meta charSet="utf-8" />
 					<meta
 						name="viewport"
@@ -32,7 +32,7 @@ export default class MyApp extends App {
 					/>
 					<meta
 						name="description"
-						content="In Livify you can find the latest highlights of your favorite soccer team"
+						content="In Livify you can find the latest video highlights of your favorite football team"
 					/>
 					<meta
 						name="google-site-verification"
