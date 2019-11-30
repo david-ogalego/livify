@@ -41,7 +41,7 @@ export default class MyApp extends App {
 					<link rel="canonical" href="https://livify.es/" />
 					<link
 						rel="stylesheet"
-						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+						href="https://fonts.googleapis.com/css?family=Muli:300,400,500,700&display=swap"
 					/>
 				</Head>
 				<Component {...pageProps} />

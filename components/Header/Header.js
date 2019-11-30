@@ -70,7 +70,7 @@ export default ({ showPrevious }) => (
 
             h6 {
                 font-size: 1.25rem;
-                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-family: 'Muli', 'Helvetica', 'Arial', sans-serif;
                 font-weight: 500;
                 line-height: 1.6;
                 letter-spacing: 0.0075em;
