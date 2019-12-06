@@ -15,7 +15,7 @@ export default class MyApp extends App {
 	}
 
 	componentDidMount() {
-		// initGA();
+		initGA();
 	}
 
 	render() {
@@ -24,6 +24,13 @@ export default class MyApp extends App {
 		return (
 			<>
 				<Head>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<script dangerouslySetInnerHTML={
+						`(adsbygoogle = window.adsbygoogle || []).push({
+							google_ad_client: "ca-pub-4596904447424323",
+							enable_page_level_ads: true
+						});`}
+					/>
 					<title>Livify - Your football video highlights</title>
 					<meta charSet="utf-8" />
 					<meta
@@ -34,7 +41,6 @@ export default class MyApp extends App {
 						name="description"
 						content="In Livify you can find the latest video highlights of your favorite football team"
 					/>
-					<script data-ad-client="ca-pub-4596904447424323" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<meta
 						name="google-site-verification"
 						content="JiorsfOK6HgBhWTOgizzIGNo4mx4I7-ybiOJsorG5YQ"
