@@ -34,6 +34,7 @@ export default class MyApp extends App {
 						name="description"
 						content="In Livify you can find the latest video highlights of your favorite football team"
 					/>
+					<script data-ad-client="ca-pub-4596904447424323" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<meta
 						name="google-site-verification"
 						content="JiorsfOK6HgBhWTOgizzIGNo4mx4I7-ybiOJsorG5YQ"
@@ -43,7 +44,6 @@ export default class MyApp extends App {
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Muli:300,400,500,700&display=swap"
 					/>
-					<script data-ad-client="ca-pub-4596904447424323" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				</Head>
 				<Component {...pageProps} />
 				<style global jsx>{`
