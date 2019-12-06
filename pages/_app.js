@@ -15,7 +15,7 @@ export default class MyApp extends App {
 	}
 
 	componentDidMount() {
-		initGA();
+		// initGA();
 	}
 
 	render() {
