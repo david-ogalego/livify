@@ -25,11 +25,12 @@ export default class MyApp extends App {
 			<>
 				<Head>
 					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<script dangerouslySetInnerHTML={
-						`(adsbygoogle = window.adsbygoogle || []).push({
+					<script dangerouslySetInnerHTML={{
+						__html:
+							`(adsbygoogle = window.adsbygoogle || []).push({
 							google_ad_client: "ca-pub-4596904447424323",
 							enable_page_level_ads: true
-						});`}
+						});`}}
 					/>
 					<title>Livify - Your football video highlights</title>
 					<meta charSet="utf-8" />
