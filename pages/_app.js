@@ -43,7 +43,7 @@ export default class MyApp extends App {
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Muli:300,400,500,700&display=swap"
 					/>
-<script data-ad-client="ca-pub-4596904447424323" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                        <script data-ad-client="ca-pub-4596904447424323" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				</Head>
 				<Component {...pageProps} />
 				<style global jsx>{`
