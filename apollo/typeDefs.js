@@ -16,9 +16,37 @@ const typeDefs = gql`
         videos: [video]
     }
 
+    type team {
+        team_id: Int!
+        team_name: String
+        logo: String
+    }
+
+    type league {
+        name: String
+        country: String
+        logo: String
+        flag: String
+    }
+
+    type match {
+        fixture_id: Int
+        event_date: String
+        homeTeam: team
+        awayTeam: team
+        goalsHomeTeam: Int
+        goalsAwayTeam: Int
+        status: String
+        league: league
+        elapsed: Int
+        venue: String
+        referee: String
+    }
+
     type Query {
         summaries: [summary]
         summary(id: String!): summary
+        liveMatches: [match]
     }
 `;
 

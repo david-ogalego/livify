@@ -1,6 +1,7 @@
-import SummaryRepository from '../repositories/SummaryRepository';
+import { LiveMatchesRepository, SummaryRepository} from '../repositories';
 
 const summaryRepository = new SummaryRepository();
+const liveMatchesRepository = new LiveMatchesRepository();
 
 const resolvers = {
     Query: {
@@ -9,7 +10,10 @@ const resolvers = {
         },
         summary: (_, { id }) => {
             return summaryRepository.fetchSummary(id);
-        }
+        },
+        liveMatches: () => {
+            return liveMatchesRepository.fetchLiveMatches();
+        },
     }
 };
 
