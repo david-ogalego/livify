@@ -3,6 +3,7 @@ import { withApollo } from '../apollo/withApollo';
 import SummariesList from '../components/SummariesList';
 import Header from '../components/Header/Header';
 import { PageView } from '../utils/analytics/pageView';
+import LiveList from '../components/LiveList/LiveList';
 
 const IndexPage = () => {
     useEffect(() => {
@@ -11,7 +12,8 @@ const IndexPage = () => {
     return (
         <>
             <Header />
-            <SummariesList />
+            {/* <SummariesList /> */}
+            <LiveList />
         </>
     );
 };
