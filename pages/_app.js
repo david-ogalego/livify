@@ -24,13 +24,14 @@ export default class MyApp extends App {
 		return (
 			<>
 				<Head>
-					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
 					<script dangerouslySetInnerHTML={{
 						__html:
 							`(adsbygoogle = window.adsbygoogle || []).push({
 							google_ad_client: "ca-pub-4596904447424323",
 							enable_page_level_ads: true
-						});`}}
+						});`
+					}}
 					/>
 					<title>Livify - Your football video highlights</title>
 					<meta charSet="utf-8" />
@@ -53,7 +54,8 @@ export default class MyApp extends App {
 					/>
 				</Head>
 				<Component {...pageProps} />
-				<style global jsx>{`
+				<style global jsx>
+					{`
                     body {
                         color: rgba(0, 0, 0, 0.87);
                         margin: 0;
@@ -84,7 +86,8 @@ export default class MyApp extends App {
                         line-height: normal;
                         outline: none;
                     }
-                `}</style>
+                `}
+				</style>
 			</>
 		);
 	}
