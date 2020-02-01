@@ -35,9 +35,8 @@ const GET_LIVE_MATCHES = gql`
 `;
 
 export default () => {
-    const { loading, error, data } = useQuery(GET_LIVE_MATCHES);
-    if (loading) return <p>Loading ...</p>;
-    if (error) return 'Error!';
-    if (data.liveMatches && data.liveMatches.length)
-        return <List liveMatches={data.liveMatches} />;
+	const { loading, error, data } = useQuery(GET_LIVE_MATCHES);
+	if (loading) return <p>Loading ...</p>;
+	if (error || !data.liveMatches) return 'Error!';
+	return <List liveMatches={data.liveMatches} />;
 };

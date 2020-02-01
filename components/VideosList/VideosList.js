@@ -1,17 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Video from '../Video';
 
-export default ({ videos }) =>
-    videos && videos.length ? (
-        <>
-            <ul className="list">
-                {videos.map(({ id, title, embed }) => (
-                    <li key={id} className="list-item">
-                        <Video title={title} embed={embed} />
-                    </li>
-                ))}
-            </ul>
-            <style jsx>{`
+const VideosList = ({ videos }) => (videos && videos.length ? (
+	<>
+		<ul className="list">
+			{videos.map(({ id, title, embed }) => (
+				<li key={id} className="list-item">
+					<Video title={title} embed={embed} />
+				</li>
+			))}
+		</ul>
+		<style jsx>
+			{`
                 .list {
                     display: flex;
                     flex-wrap: wrap;
@@ -32,6 +33,17 @@ export default ({ videos }) =>
                         margin: 10px;
                     }
                 }
-            `}</style>
-        </>
-    ) : null;
+            `}
+		</style>
+	</>
+) : null);
+
+VideosList.propTypes = {
+	videos: PropTypes.arrayOf(PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		title: PropTypes.string.isRequired,
+		embed: PropTypes.string.isRequired
+	})).isRequired
+};
+
+export default VideosList;

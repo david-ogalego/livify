@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import SummaryDetail from './SummaryDetail';
@@ -20,22 +21,29 @@ const GET_SUMMARY = gql`
     }
 `;
 
-export default ({ id }) => {
-    const { loading, error, data } = useQuery(GET_SUMMARY, {
-        variables: { id: id }
-    });
-    if (loading) return <p>Loading ...</p>;
-    if (error) return 'Error!';
-    if (data.summary) {
-        const { id, title, url, thumbnail, videos } = data.summary;
-        return (
-            <SummaryDetail
-                key={id}
-                title={title}
-                url={url}
-                image={thumbnail}
-                videos={videos}
-            />
-        );
-    }
+const SummaryQuery = ({ id }) => {
+	const { loading, error, data } = useQuery(GET_SUMMARY, {
+		variables: { id }
+	});
+	if (loading) return <p>Loading ...</p>;
+	if (error || !data || !data.summary) return 'Error!';
+
+	const {
+		title, url, thumbnail, videos
+	} = data.summary;
+	return (
+		<SummaryDetail
+			key={id}
+			title={title}
+			url={url}
+			image={thumbnail}
+			videos={videos}
+		/>
+	);
 };
+
+SummaryQuery.propTypes = {
+	id: PropTypes.number.isRequired
+};
+
+export default SummaryQuery;

@@ -1,19 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CardMatch from '../CardMatch';
 
-export default ({ liveMatches }) => {
-    return (
-        <React.Fragment>
-            <div className="containerRoot">
-                <ul className="list">
-                    {liveMatches.map((match) => (
-                        <li className="list-item" key={match.fixture_id}>
-                            <CardMatch match={match} />
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <style jsx>{`
+const List = ({ liveMatches }) => (
+	<>
+		<div className="containerRoot">
+			<ul className="list">
+				{liveMatches.map((match) => (
+					<li className="list-item" key={match.fixture_id}>
+						<CardMatch match={match} />
+					</li>
+				))}
+			</ul>
+		</div>
+		<style jsx>
+			{`
                 .containerRoot {
                     width: 100%;
                     box-sizing: border-box;
@@ -59,7 +60,15 @@ export default ({ liveMatches }) => {
                         margin: 10px;
                     }
                 }
-            `}</style>
-        </React.Fragment>
-    );
+            `}
+		</style>
+	</>
+);
+
+List.propTypes = {
+	liveMatches: PropTypes.arrayOf(PropTypes.shape({
+		fixture_id: PropTypes.number
+	})).isRequired
 };
+
+export default List;

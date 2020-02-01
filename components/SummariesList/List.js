@@ -1,19 +1,21 @@
 import React from 'react';
-import Card from '../../components/Card';
+import PropTypes from 'prop-types';
+import Card from '../Card';
 
-export default ({ summaries }) => {
-    return (
-        <React.Fragment>
-            <div className="containerRoot">
-                <ul className="list">
-                    {summaries.map((summary, index) => (
-                        <li className="list-item" key={index}>
-                            <Card summary={summary} />
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <style jsx>{`
+const List = ({ summaries }) => (
+	<>
+		<div className="containerRoot">
+			<ul className="list">
+				{summaries.map((summary, index) => (
+					// eslint-disable-next-line react/no-array-index-key
+					<li className="list-item" key={index}>
+						<Card summary={summary} />
+					</li>
+				))}
+			</ul>
+		</div>
+		<style jsx>
+			{`
                 .containerRoot {
                     width: 100%;
                     box-sizing: border-box;
@@ -59,7 +61,13 @@ export default ({ summaries }) => {
                         margin: 10px;
                     }
                 }
-            `}</style>
-        </React.Fragment>
-    );
+            `}
+		</style>
+	</>
+);
+
+List.propTypes = {
+	summaries: PropTypes.arrayOf({}).isRequired
 };
+
+export default List;

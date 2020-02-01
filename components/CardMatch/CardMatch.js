@@ -1,30 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TeamMatchDetail from './TeamMatchDetail';
 import InfoMatch from './InfoMatch';
 
-export default ({ match }) => (
-    <React.Fragment>
-        <div className="cardContainer">
-            <div className="cardArea">
-                <div className="cardContent">
-                    <TeamMatchDetail
-                        logo={match.homeTeam.logo}
-                        teamName={match.homeTeam.team_name}
-                        goals={match.goalsHomeTeam}
-                    />
-                    <TeamMatchDetail
-                        logo={match.awayTeam.logo}
-                        teamName={match.awayTeam.team_name}
-                        goals={match.goalsAwayTeam}
-                    />
-                    <InfoMatch 
-                        status={match.status}
-                        elapsed={match.elapsed}
-                    />
-                </div>
-            </div>
-        </div>
-        <style jsx>{`
+const CardMatch = ({ match }) => (
+	<>
+		<div className="cardContainer">
+			<div className="cardArea">
+				<div className="cardContent">
+					<TeamMatchDetail
+						teamName={match.homeTeam.team_name}
+						goals={match.goalsHomeTeam}
+					/>
+					<TeamMatchDetail
+						teamName={match.awayTeam.team_name}
+						goals={match.goalsAwayTeam}
+					/>
+					<InfoMatch
+						status={match.status}
+						elapsed={match.elapsed}
+					/>
+				</div>
+			</div>
+		</div>
+		<style jsx>
+			{`
             .cardContainer {
                 border-radius: 4px;
                 box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -73,6 +73,24 @@ export default ({ match }) => (
                 margin: 0;
                 color: #3a3a3a;
             }
-        `}</style>
-    </React.Fragment>
+        `}
+		</style>
+	</>
 );
+
+CardMatch.propTypes = {
+	match: PropTypes.shape({
+		homeTeam: PropTypes.shape({
+			team_name: PropTypes.string
+		}),
+		awayTeam: PropTypes.shape({
+			team_name: PropTypes.string
+		}),
+		goalsHomeTeam: PropTypes.number,
+		goalsAwayTeam: PropTypes.number,
+		status: PropTypes.string,
+		elapsed: PropTypes.number
+	}).isRequired
+};
+
+export default CardMatch;

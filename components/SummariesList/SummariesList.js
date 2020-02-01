@@ -21,9 +21,8 @@ const GET_SUMMARIES = gql`
 `;
 
 export default () => {
-    const { loading, error, data } = useQuery(GET_SUMMARIES);
-    if (loading) return <p>Loading ...</p>;
-    if (error) return 'Error!';
-    if (data.summaries && data.summaries.length)
-        return <List summaries={data.summaries} />;
+	const { loading, error, data } = useQuery(GET_SUMMARIES);
+	if (loading) return <p>Loading ...</p>;
+	if (error || !data.summaries) return 'Error!';
+	return <List summaries={data.summaries} />;
 };

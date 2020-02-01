@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ logo, teamName, goals }) => (
-    <React.Fragment>
-        {/* <img className="imageCardMatch" src={logo} /> */}
-        <div>
-            <span className="nameTeam">{teamName}</span>
-            <span className="goalsTeam">{goals}</span>
-        </div>
-        <style jsx>{`
+const TeamMatchDetail = ({ teamName, goals }) => (
+	<>
+		<div>
+			<span className="nameTeam">{teamName}</span>
+			<span className="goalsTeam">{goals}</span>
+		</div>
+		<style jsx>
+			{`
             .imageCardMatch {
                 height: 15px;
             }
@@ -15,6 +16,13 @@ export default ({ logo, teamName, goals }) => (
                 float: right;
             }
         `}
-        </style>
-    </React.Fragment>
+		</style>
+	</>
 );
+
+TeamMatchDetail.propTypes = {
+	teamName: PropTypes.string.isRequired,
+	goals: PropTypes.number.isRequired
+};
+
+export default TeamMatchDetail;

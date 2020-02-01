@@ -1,15 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useCounter from './useCounter';
 
-export default ({ status, elapsed }) => {
-    const { minutes, seconds } = useCounter(elapsed);
-    return (
-        <React.Fragment>
-            <div className="infoContainer">
-                <span className="status">{status}</span>
-                <span className="counter">{minutes}:{seconds}</span>
-            </div>
-            <style jsx>{`
+const InfoMatch = ({ status, elapsed }) => {
+	const { minutes, seconds } = useCounter(elapsed);
+	return (
+		<>
+			<div className="infoContainer">
+				<span className="status">{status}</span>
+				<span className="counter">
+					{minutes}
+:
+					{seconds}
+				</span>
+			</div>
+			<style jsx>
+				{`
                 .infoContainer {
                     margin-top: 5px;
                 }
@@ -20,7 +26,16 @@ export default ({ status, elapsed }) => {
                     font-size: 12px;
                     float: right;
                 }
-            `}</style>
-        </React.Fragment>
-    );
+            `}
+			</style>
+		</>
+	);
 };
+
+
+InfoMatch.propTypes = {
+	status: PropTypes.string.isRequired,
+	elapsed: PropTypes.number.isRequired
+};
+
+export default InfoMatch;

@@ -1,13 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ src, title }) => (
-    <>
-        <div
-            alt={title}
-            className="image"
-            style={{ backgroundImage: `url("${src}")` }}
-        />
-        <style jsx>{`
+const Image = ({ src, title }) => (
+	<>
+		<div
+			alt={title}
+			className="image"
+			style={{ backgroundImage: `url("${src}")` }}
+		/>
+		<style jsx>
+			{`
             .image {
                 display: block;
                 background-size: cover;
@@ -15,6 +17,14 @@ export default ({ src, title }) => (
                 background-position: center;
                 height: 140px;
             }
-        `}</style>
-    </>
+        `}
+		</style>
+	</>
 );
+
+Image.propTypes = {
+	src: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired
+};
+
+export default Image;

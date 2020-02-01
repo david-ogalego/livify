@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Router from 'next/router';
 
-export default ({ showPrevious }) => (
-	<React.Fragment>
+const Header = ({ showPrevious }) => (
+	<>
 		<header>
 			<div className="container">
 				{showPrevious && (
-					<button onClick={() => Router.back()} className="back">
-						<div className="back-arrow"></div>
+					<button type="button" onClick={() => Router.back()} className="back">
+						<div className="back-arrow" />
 					</button>
 				)}
 				<div className="container-title">
@@ -17,7 +18,8 @@ export default ({ showPrevious }) => (
 				</div>
 			</div>
 		</header>
-		<style jsx>{`
+		<style jsx>
+			{`
             header {
                 background: linear-gradient(
 					to bottom,
@@ -81,6 +83,13 @@ export default ({ showPrevious }) => (
                 text-decoration: none;
                 color: white;
             }
-        `}</style>
-	</React.Fragment>
+        `}
+		</style>
+	</>
 );
+
+Header.propTypes = {
+	showPrevious: PropTypes.bool.isRequired
+};
+
+export default Header;

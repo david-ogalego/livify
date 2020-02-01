@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Image from './Image';
 
-export default ({ summary }) => (
-	<React.Fragment>
+const Card = ({ summary }) => (
+	<>
 		<div className="cardContainer">
 			<a className="cardArea" href={`/detail?id=${summary.id}`} rel="nofollow">
 				<Image src={summary.thumbnail} title={summary.title} />
@@ -11,7 +12,8 @@ export default ({ summary }) => (
 				</div>
 			</a>
 		</div>
-		<style jsx>{`
+		<style jsx>
+			{`
             .cardContainer {
                 border-radius: 4px;
                 box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -61,6 +63,17 @@ export default ({ summary }) => (
 				margin: 0;
 				color: #3a3a3a;
             }
-        `}</style>
-	</React.Fragment>
+        `}
+		</style>
+	</>
 );
+
+Card.propTypes = {
+	summary: PropTypes.shape({
+		id: PropTypes.number,
+		title: PropTypes.string,
+		thumbnail: PropTypes.string
+	}).isRequired
+};
+
+export default Card;
