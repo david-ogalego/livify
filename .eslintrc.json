@@ -24,6 +24,13 @@
         "global-require": 0,
         "eslint linebreak-style": [0, "error", "windows"],
         "comma-dangle": ["error", "never"],
-        "indent": [4, "tab"]
+		"indent": [2, "tab"],
+		// Indent JSX with 4 spaces
+		"react/jsx-indent": [2, "tab"],
+
+		// Indent props with 4 spaces
+		"react/jsx-indent-props": [2, "tab"],
+		"react/jsx-props-no-spreading": "off",
+		"no-tabs": 0
     }
 }
