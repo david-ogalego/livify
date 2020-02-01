@@ -1,7 +1,7 @@
 import SummaryRepository from './SummaryRepository';
-import LiveMatchesRepository from './LiveMatchesRepository';
+import fetchLiveMatches from './LiveMatchesRepository';
 
 export {
-    LiveMatchesRepository,
-    SummaryRepository
+	fetchLiveMatches,
+	SummaryRepository
 };

@@ -1,20 +1,13 @@
-import { LiveMatchesRepository, SummaryRepository} from '../repositories';
+import { fetchLiveMatches, SummaryRepository } from '../repositories';
 
 const summaryRepository = new SummaryRepository();
-const liveMatchesRepository = new LiveMatchesRepository();
 
 const resolvers = {
-    Query: {
-        summaries: () => {
-            return summaryRepository.fetchSummaries();
-        },
-        summary: (_, { id }) => {
-            return summaryRepository.fetchSummary(id);
-        },
-        liveMatches: () => {
-            return liveMatchesRepository.fetchLiveMatches();
-        },
-    }
+	Query: {
+		summaries: () => summaryRepository.fetchSummaries(),
+		summary: (_, { id }) => summaryRepository.fetchSummary(id),
+		liveMatches: () => fetchLiveMatches()
+	}
 };
 
 export default resolvers;
