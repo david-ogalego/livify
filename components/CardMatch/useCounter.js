@@ -8,7 +8,7 @@ export default function useCounter(elapsed) {
 	const savedCallback = useRef();
 
 	function callback() {
-        if (minutes >= 90) {
+		if (minutes >= 90 || minutes >= 45) {
 			return setSeconds(0);
 		}
 		if (seconds < 59) {
